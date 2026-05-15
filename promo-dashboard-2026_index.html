@@ -606,15 +606,35 @@ const DEFAULT_DATA = {
 
 const STORAGE_KEY = 'promo_dashboard_2026_h1_v9';
 
-function loadData() {
+let dataSource = 'default';  // 'remote' | 'local' | 'default'
+
+async function loadData() {
+  // 1) 외부 data.json 우선 시도 (GitHub Pages 등 HTTP/HTTPS 호스팅 시 동작)
+  try {
+    const resp = await fetch('./data.json?_=' + Date.now(), { cache: 'no-store' });
+    if (resp.ok) {
+      const j = await resp.json();
+      dataSource = 'remote';
+      console.log('[Dashboard] data.json 로드 성공');
+      return j;
+    }
+  } catch (e) {
+    console.log('[Dashboard] data.json 없음 → localStorage 사용');
+  }
+  // 2) localStorage (로컬 file:// 또는 data.json 없는 경우)
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      dataSource = 'local';
+      return JSON.parse(raw);
+    }
   } catch(e) {}
+  // 3) 기본값
+  dataSource = 'default';
   return JSON.parse(JSON.stringify(DEFAULT_DATA));
 }
 
-let DATA = loadData();
+let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));  // 임시 초기값 (init()에서 덮어씀)
 
 function saveData() {
   DATA.meta.lastUpdate = new Date().toISOString();
@@ -1418,7 +1438,24 @@ document.addEventListener('keydown', e => {
 });
 document.addEventListener('input', handleNoteEdit, true);
 
-renderAll();
+// Async 초기화 — data.json 우선 fetch 후 렌더
+(async function init() {
+  DATA = await loadData();
+  renderAll();
+  showDataSourceBanner();
+})();
+
+function showDataSourceBanner() {
+  const lu = document.getElementById('last-update');
+  if (!lu) return;
+  const labels = {
+    'remote': '📡 data.json 동기화 (팀 공유 버전)',
+    'local': '💾 로컬 저장소 (편집 모드)',
+    'default': '🆕 초기 데이터'
+  };
+  const orig = lu.textContent;
+  lu.innerHTML = `${labels[dataSource]} · <span style="opacity:0.8;">${orig}</span>`;
+}
 </script>
 </body>
 </html>

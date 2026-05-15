@@ -1,0 +1,112 @@
+{
+  "meta": { "lastUpdate": null },
+  "promotions": [
+    {
+      "id": "P1", "month": "1월",
+      "name": "신년 행운카드 프로모션",
+      "channel": "CRM Push + 스마트배너",
+      "period": "26.01.06 ~ 26.01.13",
+      "status": "완료",
+      "goal": { "send": 700000, "introView": null, "intro": 525, "apply": null, "contract": 10, "cost": 312000 },
+      "actual": { "send": 2032831, "introView": 14985, "intro": 7395, "apply": null, "contract": 504, "cost": 3747000 },
+      "baseline": { "intro": 285, "contract": 5 },
+      "d0_revenue": null,
+      "loanCVR": null,
+      "kpis": [
+        { "label": "CRM을 통한 한도조회 수", "shortLabel": "한도조회 수", "goal": 700, "actualOverride": 1181, "format": "int" }
+      ],
+      "note": "CRM 프로모션 오픈(5,172) + 스마트배너(9,813) = 14,985"
+    },
+    {
+      "id": "P2", "month": "2월",
+      "name": "세뱃돈 프로모션",
+      "channel": "브랜드메시지 + Push (+스마트배너)",
+      "period": "26.02.09 ~ 26.02.13",
+      "status": "완료",
+      "goal": { "send": 426000, "introView": null, "intro": 5368, "apply": null, "contract": 60, "cost": 9789506 },
+      "actual": { "send": 2528421, "introView": 5855, "intro": 1045, "apply": null, "contract": 21, "cost": 8623238 },
+      "baseline": { "intro": 1188, "contract": 15 },
+      "d0_revenue": 1355715,
+      "loanCVR": null,
+      "kpis": [
+        { "label": "인트로→한도조회 CVR", "shortLabel": "인트로→한도조회 CVR", "goal": 0.63, "formula": "introToLimitCVR", "format": "pct" }
+      ],
+      "note": "⚠️ 인트로 조회는 앱오픈으로 대체 (소스시트에 별도 미집계)"
+    },
+    {
+      "id": "P3", "month": "상시",
+      "name": "대출신청 상시 (신규유저)",
+      "channel": "Push (트리거, 1h delay 등)",
+      "period": "26.04.13 ~ 26.04.29",
+      "status": "완료",
+      "goal": { "send": null, "introView": null, "intro": null, "apply": null, "contract": null, "cost": 9000000 },
+      "actual": { "send": 43702, "introView": 826, "intro": 239, "apply": 105, "contract": 20, "cost": 76000 },
+      "baseline": { "intro": null, "contract": null },
+      "d0_revenue": null,
+      "loanCVR": { "baselineCVR": 0.399, "goalCVR": 0.399 },
+      "note": "신규 회원가입 7일 이내 유저 타겟"
+    },
+    {
+      "id": "P4", "month": "상시",
+      "name": "대출신청 상시 (타사한도조회)",
+      "channel": "Push (5분 전 타사한도조회)",
+      "period": "26.04.14 ~ 26.04.29",
+      "status": "완료",
+      "goal": { "send": null, "introView": null, "intro": null, "apply": null, "contract": null, "cost": 250000 },
+      "actual": { "send": 340692, "introView": 2737, "intro": 1704, "apply": 339, "contract": 30, "cost": 129000 },
+      "baseline": { "intro": null, "contract": null },
+      "d0_revenue": null,
+      "loanCVR": { "baselineCVR": 0.0966, "goalCVR": 0.0966 },
+      "note": "타사 한도조회 직후 (plan_id 20005)"
+    },
+    {
+      "id": "P5", "month": "5월",
+      "name": "가정의달 프로모션",
+      "channel": "LMS + Push",
+      "period": "26.05.11 ~ 26.05.29",
+      "status": "진행중",
+      "goal": { "send": null, "introView": null, "intro": null, "apply": null, "contract": null, "cost": null },
+      "actual": { "send": null, "introView": null, "intro": null, "apply": null, "contract": null, "cost": null },
+      "baseline": { "intro": null, "contract": null },
+      "d0_revenue": null,
+      "loanCVR": null,
+      "kpis": [
+        { "label": "인트로→한도조회 CVR", "shortLabel": "인트로→한도조회 CVR", "goal": 0.56, "formula": "introToLimitCVR", "format": "pct" },
+        { "label": "한도조회→신청 CVR", "shortLabel": "한도조회→신청 CVR", "goal": 0.35, "formula": "limitToApplyCVR", "format": "pct" }
+      ],
+      "note": "",
+      "dailyLog": [
+        { "date": "2026-05-11", "introView": 4936, "approve": 1219, "reject": 1635, "creditLoan": 550, "otherLoan": 204, "contract": null, "cost": 581458, "memo": "" },
+        { "date": "2026-05-12", "introView": 2674, "approve": 834, "reject": 951, "creditLoan": 456, "otherLoan": 155, "contract": null, "cost": 254358, "memo": "" },
+        { "date": "2026-05-13", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-14", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-15", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-16", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-17", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-18", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-19", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-20", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-21", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-22", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-23", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-24", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-25", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-26", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-27", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-28", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" },
+        { "date": "2026-05-29", "introView": null, "approve": null, "reject": null, "creditLoan": null, "otherLoan": null, "contract": null, "cost": null, "memo": "" }
+      ]
+    }
+  ],
+  "loanIntegrated": {
+    "period": "2026.04.13 ~ 2026.04.30",
+    "source": "믹스패널 (CRM + 스마트배너 통합)",
+    "introView": 5114,
+    "ctaClick": 3748,
+    "bottomsheetView": 123,
+    "paths": [
+      { "name": "대출비교", "message": "신용대출 조건 비교하기", "intro": 1700, "apply": 940, "pointReward": 865 },
+      { "name": "대부 (올거절)", "message": "오늘 대출 신청하면 무조건 1,000P 드려요", "intro": 2062, "apply": 410, "pointReward": null }
+    ]
+  }
+}
